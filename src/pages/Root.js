@@ -5,7 +5,9 @@ export const Root = () => {
     return (
         <>
         <MainNavigation />
-            <Outlet/>
+        <main class='content'>
+        <Outlet/>
+        </main>
         </>
     )
 }

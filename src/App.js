@@ -2,15 +2,19 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import HomePage from "./pages/Home";
 import Products from "./pages/Products";
 import {Root} from "./pages/Root";
+import {ErrorPage} from "./pages/Error";
+import {ProductDetails} from "./pages/ProductDetails";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root />,
         children: [
-            {path: '/', element: <HomePage/>},
-            {path: '/products', element: <Products/>}
-        ]
+            {index: true, element: <HomePage/>},
+            {path: 'products', element: <Products/>},
+            {path: 'products/:productId', element: <ProductDetails />}
+        ],
+        errorElement: <ErrorPage/>
     }
 ])
 
